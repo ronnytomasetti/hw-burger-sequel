@@ -1,7 +1,5 @@
 'use strict';
 
-var customDataTypes = require('../lib/sequelize-mysql-timestamp');
-
 module.exports = function(sequelize, DataTypes) {
 
 	var Burgers = sequelize.define('Burgers', {
@@ -18,16 +16,12 @@ module.exports = function(sequelize, DataTypes) {
 		devoured: {
 			allowNull: false,
 			type: DataTypes.BOOLEAN
-		},
-		date: {
-			allowNull: false,
-			defaultValue: sequelize.NOW,
-			type: customDataTypes.TIMESTAMP
 		}
 	}, {
-		timestamps: false,
 		classMethods: {
-			associate: function(models) {}
+			associate: function(models) {
+				Burgers.hasOne(models.Users);
+			}
 		}
 	});
 

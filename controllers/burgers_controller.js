@@ -43,8 +43,8 @@ router.post('/burgers', function(req, res) {
 		return res.redirect('/');
 	}).catch(function(error) {
 		return res.render('error', {
-	  		message: err.message,
-	  		error: err
+	  		message: error.message,
+	  		error: error
 		});
 	});
 });
@@ -64,8 +64,8 @@ router.put('/burgers/update/:id', function(req, res) {
 		return res.redirect('/');
 	}).catch(function(error) {
 		return res.render('error', {
-	  		message: err.message,
-	  		error: err
+	  		message: error.message,
+	  		error: error
 		});
 	});
 });
@@ -85,8 +85,8 @@ router.delete('/burgers/update/:id', function(req, res) {
 		return res.redirect('/');
 	}).catch(function(error) {
 		return res.render('error', {
-	  		message: err.message,
-	  		error: err
+	  		message: error.message,
+	  		error: error
 		});
 	});
 });

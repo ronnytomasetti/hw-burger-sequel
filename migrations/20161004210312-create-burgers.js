@@ -1,7 +1,5 @@
 'use strict';
 
-var customDataTypes = require('../lib/sequelize-mysql-timestamp');
-
 module.exports = {
 
 	up: function(queryInterface, Sequelize) {
@@ -21,10 +19,20 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.BOOLEAN
 			},
-			date: {
+			createdAt: {
 				allowNull: false,
-				defaultValue: Sequelize.NOW,
-				type: customDataTypes.TIMESTAMP
+				type: Sequelize.DATE
+			},
+			updatedAt: {
+				allowNull: false,
+				type: Sequelize.DATE
+			},
+			user_id: {
+				type: Sequelize.INTEGER,
+				references: {
+					model: 'Users',
+					key: 'user_id'
+				}
 			}
 		});
 	},

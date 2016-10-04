@@ -11,11 +11,13 @@ var methodOverride = require('method-override');
 var app = express();
 
 // =================================================================
-// Sequelize migrations
+// Sequelize migrations (DO NOT NEED THESE COMMANDS!!!!)
 // =================================================================
-var Burgers = require('./models')['Burgers'];
-var options = { force : true };
-Burgers.sync(options);
+// var Burgers = require('./models')['Burgers'];
+// var Users = require('./models')['Users'];
+// var options = { force : true };
+// Burgers.sync(options);
+// Users.sync(options);
 // =================================================================
 
 // =================================================================
@@ -50,7 +52,7 @@ app.use(logger('dev'));
 // =================================================================
 app.use(methodOverride('_method'));
 
-var controller = require('./controllers/burgers_controllers');
+var controller = require('./controllers/burgers_controller');
 app.use('/', controller);
 
 // Catch 404 errors, forward to error handlers below.
