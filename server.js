@@ -10,9 +10,13 @@ var methodOverride = require('method-override');
 // =================================================================
 var app = express();
 
-var burgers = require('./models')['burgers'];
+// =================================================================
+// Sequelize migrations
+// =================================================================
+var Burgers = require('./models')['Burgers'];
 var options = { force : true };
-burgers.sync(options);
+Burgers.sync(options);
+// =================================================================
 
 // =================================================================
 // View engine setup

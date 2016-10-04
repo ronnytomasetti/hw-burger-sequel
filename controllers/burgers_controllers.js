@@ -4,7 +4,7 @@
 var express = require('express');
 var router = express.Router();
 
-var burgers = require('../models')['burgers'];
+var burgers = require('../models')['Burgers'];
 
 // =================================================================
 // Routes

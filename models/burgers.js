@@ -4,7 +4,7 @@ var customDataTypes = require('../lib/sequelize-mysql-timestamp');
 
 module.exports = function(sequelize, DataTypes) {
 
-	var burgers = sequelize.define('burgers', {
+	var Burgers = sequelize.define('Burgers', {
 		burger_id: {
 			autoIncrement: true,
 			primaryKey: true,
@@ -24,11 +24,12 @@ module.exports = function(sequelize, DataTypes) {
 			defaultValue: sequelize.NOW,
 			type: customDataTypes.TIMESTAMP
 		}
-	},
-	{
+	}, {
 		timestamps: false,
-    	classMethods: { associate: function(models) { } }
+		classMethods: {
+			associate: function(models) {}
+		}
 	});
 
-	return burgers;
+	return Burgers;
 };
