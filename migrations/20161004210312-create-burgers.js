@@ -19,20 +19,20 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.BOOLEAN
 			},
-			createdAt: {
-				allowNull: false,
-				type: Sequelize.DATE
-			},
-			updatedAt: {
-				allowNull: false,
-				type: Sequelize.DATE
-			},
-			user_id: {
+			customer_id: {
 				type: Sequelize.INTEGER,
 				references: {
-					model: 'Users',
-					key: 'user_id'
+					model: 'Customers',
+					key: 'customer_id'
 				}
+			},
+			created_at: {
+				allowNull: false,
+				type: Sequelize.DATE
+			},
+			updated_at: {
+				allowNull: false,
+				type: Sequelize.DATE
 			}
 		});
 	},

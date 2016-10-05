@@ -2,23 +2,26 @@
 
 module.exports = function(sequelize, DataTypes) {
 
-	var Users = sequelize.define('Users', {
-		user_id: {
+	var Customers = sequelize.define('Customers', {
+		customer_id: {
 			autoIncrement: true,
 			primaryKey: true,
 			unique: true,
 			type: DataTypes.INTEGER
 		},
-		user_name: {
+		customer_name: {
 			allowNull: false,
 			type: DataTypes.STRING
 		}
 	}, {
+		underscored: true,
 		classMethods: {
-			associate: function(models) { }
+			associate: function(models) {
+				// Customers.hasMany(models.Burgers, { foreignKey: 'Customers.customer_id' });
+			}
 		}
 	});
 
-	return Users;
+	return Customers;
 
 };

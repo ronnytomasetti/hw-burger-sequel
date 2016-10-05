@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 
 var burgers = require('../models')['Burgers'];
+var customers = require('../models')['Customers'];
 
 // =================================================================
 // Routes
@@ -14,7 +15,11 @@ var burgers = require('../models')['Burgers'];
  */
 router.get('/', function(req, res) {
 	burgers.findAll({
-	}).then(function(results){
+		attributes: {
+			exclude: ['created_at', 'updated_at']
+		}
+	}).then(function(results) {
+		console.log("RESULTS: ", JSON.stringify(results, null, 2));
 		return res.render('index', { burgers : results });
 	});
 });
@@ -57,15 +62,35 @@ router.post('/burgers', function(req, res) {
 router.put('/burgers/update/:id', function(req, res) {
 	var burgerId = req.params.id;
 	var devoured = req.body.devoured;
+	var customerName = req.body.customer;
 
-	burgers.update({ devoured : devoured
-	}, { where: { burger_id : burgerId }
-	}).then(function(result){
-		return res.redirect('/');
+	customers.findOrCreate({
+		where: { customer_name: customerName }
+	}).spread(function(customer, created) {
+
+		console.log("CUSTOMER: ", JSON.stringify(customer, null, 2));
+		console.log("CREATED: ", created);
+		console.log("CUSTOMER ID: ", customer.getDataValue('customer_id'));
+
+		burgers.update({
+			devoured : devoured,
+			customer_id : customer.getDataValue('customer_id')
+		}, {
+			fields: [ 'devoured', 'customer_id' ],
+			where: { burger_id : burgerId }
+		}
+		).then(function(result){
+			return res.redirect('/');
+		}).catch(function(error) {
+			return res.render('error', {
+				message: error.message,
+				error: error
+			});
+		});
 	}).catch(function(error) {
 		return res.render('error', {
-	  		message: error.message,
-	  		error: error
+			message: error.message,
+			error: error
 		});
 	});
 });

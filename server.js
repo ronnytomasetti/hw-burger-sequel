@@ -14,10 +14,9 @@ var app = express();
 // Sequelize migrations (DO NOT NEED THESE COMMANDS!!!!)
 // =================================================================
 // var Burgers = require('./models')['Burgers'];
-// var Users = require('./models')['Users'];
-// var options = { force : true };
-// Burgers.sync(options);
-// Users.sync(options);
+// Burgers.sync();
+// var Customers = require('./models')['Customers'];
+// Customers.sync();
 // =================================================================
 
 // =================================================================

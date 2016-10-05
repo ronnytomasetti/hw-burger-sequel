@@ -16,11 +16,19 @@ module.exports = function(sequelize, DataTypes) {
 		devoured: {
 			allowNull: false,
 			type: DataTypes.BOOLEAN
+		},
+		customer_id: {
+			references: {
+				model: 'Customers',
+				key: 'customer_id'
+			},
+			type: DataTypes.INTEGER
 		}
 	}, {
+		underscored: true,
 		classMethods: {
 			associate: function(models) {
-				Burgers.hasOne(models.Users);
+				// Burgers.hasOne(models.Customers, { foreignKey: 'customer_id' });
 			}
 		}
 	});

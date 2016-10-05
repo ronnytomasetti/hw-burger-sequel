@@ -3,23 +3,23 @@
 module.exports = {
 
 	up: function(queryInterface, Sequelize) {
-		return queryInterface.createTable('Users', {
-			user_id: {
+		return queryInterface.createTable('Customers', {
+			customer_id: {
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
 				unique: true,
 				type: Sequelize.INTEGER
 			},
-			user_name: {
+			customer_name: {
 				allowNull: false,
 				type: Sequelize.STRING
 			},
-			createdAt: {
+			created_at: {
 				allowNull: false,
 				type: Sequelize.DATE
 			},
-			updatedAt: {
+			updated_at: {
 				allowNull: false,
 				type: Sequelize.DATE
 			}
@@ -27,7 +27,7 @@ module.exports = {
 	},
 
 	down: function(queryInterface, Sequelize) {
-		return queryInterface.dropTable('Users');
+		return queryInterface.dropTable('Customers');
 	}
 
 };
