@@ -13,10 +13,10 @@ var app = express();
 // =================================================================
 // Sequelize migrations (DO NOT NEED THESE COMMANDS!!!!)
 // =================================================================
-// var Burgers = require('./models')['Burgers'];
-// Burgers.sync();
-// var Customers = require('./models')['Customers'];
-// Customers.sync();
+var Customers = require('./models')['Customers'];
+var Burgers = require('./models')['Burgers'];
+Burgers.sync();
+Customers.sync();
 // =================================================================
 
 // =================================================================

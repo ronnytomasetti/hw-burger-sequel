@@ -17,7 +17,13 @@ router.get('/', function(req, res) {
 	burgers.findAll({
 		attributes: {
 			exclude: ['created_at', 'updated_at']
-		}
+		},
+		include: [{
+			model: customers,
+			attributes: {
+				exclude: ['created_at', 'updated_at']
+			}
+		}]
 	}).then(function(results) {
 		console.log("RESULTS: ", JSON.stringify(results, null, 2));
 		return res.render('index', { burgers : results });
