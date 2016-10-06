@@ -1,37 +1,37 @@
 {
-  "name": "hw-burger-sequel",
-  "version": "1.0.0",
-  "description": "Burger Sequel! is a restaurant app that lets users input the names of burgers they'd like to eat.",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
-  },
-  "engines": {
-    "node": "6.5.0",
-    "npm": "3.10.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ronnytomasetti/hw-eat-da-burger.git"
-  },
-  "keywords": [
-    "burgers"
-  ],
-  "author": "Ronny Tomasetti",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ronnytomasetti/hw-eat-da-burger/issues"
-  },
-  "homepage": "https://github.com/ronnytomasetti/hw-eat-da-burger#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.6",
-    "morgan": "^1.7.0",
-    "mysql": "^2.11.1",
-    "sequelize": "^3.24.3",
-    "serve-favicon": "~2.3.0"
-  }
+    "name": "hw-burger-sequel",
+    "version": "1.0.0",
+    "description": "Burger Sequel! is a restaurant app that lets users input the names of burgers they'd like to eat.",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./bin/www"
+    },
+    "engines": {
+        "node": "6.5.0",
+        "npm": "3.10.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ronnytomasetti/hw-eat-da-burger.git"
+    },
+    "keywords": [
+        "burgers"
+    ],
+    "author": "Ronny Tomasetti",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ronnytomasetti/hw-eat-da-burger/issues"
+    },
+    "homepage": "https://github.com/ronnytomasetti/hw-eat-da-burger#readme",
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "express": "^4.14.0",
+        "express-handlebars": "^3.0.0",
+        "method-override": "^2.3.6",
+        "morgan": "^1.7.0",
+        "mysql": "^2.11.1",
+        "sequelize": "^3.24.3",
+        "serve-favicon": "~2.3.0"
+    }
 }

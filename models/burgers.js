@@ -3,7 +3,7 @@
 module.exports = function(sequelize, DataTypes) {
 
 	var Burgers = sequelize.define('Burgers', {
-		burger_name: {
+		name: {
 			allowNull: false,
 			type: DataTypes.STRING
 		},

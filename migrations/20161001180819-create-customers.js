@@ -4,14 +4,14 @@ module.exports = {
 
 	up: function(queryInterface, Sequelize) {
 		return queryInterface.createTable('Customers', {
-			customer_id: {
+			id: {
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
 				unique: true,
 				type: Sequelize.INTEGER
 			},
-			customer_name: {
+			name: {
 				allowNull: false,
 				type: Sequelize.STRING
 			},

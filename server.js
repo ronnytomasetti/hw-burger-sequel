@@ -15,8 +15,8 @@ var app = express();
 // =================================================================
 var Customers = require('./models')['Customers'];
 var Burgers = require('./models')['Burgers'];
-Burgers.sync();
-Customers.sync();
+Customers.sync({ force: true });
+Burgers.sync({ force: true });
 // =================================================================
 
 // =================================================================
@@ -68,8 +68,8 @@ if (app.get('env') === 'development') {
 	app.use(function(err, req, res, next) {
 		res.status(err.status || 500);
 		res.render('error', {
-	  		message: err.message,
-	  		error: err
+			message: err.message,
+			error: err
 		});
 	});
 }

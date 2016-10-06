@@ -25,7 +25,6 @@ router.get('/', function(req, res) {
 			}
 		}]
 	}).then(function(results) {
-		console.log("RESULTS: ", JSON.stringify(results, null, 2));
 		return res.render('index', { burgers : results });
 	});
 });
@@ -47,8 +46,8 @@ router.post('/burgers', function(req, res) {
 	var devoured = req.body.devoured;
 
 	burgers.build({
-		burger_name : burgerName,
-		   devoured : devoured })
+		name : burgerName,
+		devoured : devoured })
 	.save()
 	.then(function(result) {
 		return res.redirect('/');
@@ -71,19 +70,19 @@ router.put('/burgers/update/:id', function(req, res) {
 	var customerName = req.body.customer;
 
 	customers.findOrCreate({
-		where: { customer_name: customerName }
+		where: { name: customerName }
 	}).spread(function(customer, created) {
 
 		console.log("CUSTOMER: ", JSON.stringify(customer, null, 2));
 		console.log("CREATED: ", created);
-		console.log("CUSTOMER ID: ", customer.getDataValue('customer_id'));
+		console.log("CUSTOMER ID: ", customer.getDataValue('id'));
 
 		burgers.update({
 			devoured : devoured,
-			customer_id : customer.getDataValue('customer_id')
+			customer_id : customer.getDataValue('id')
 		}, {
 			fields: [ 'devoured', 'customer_id' ],
-			where: { burger_id : burgerId }
+			where: { id : burgerId }
 		}
 		).then(function(result){
 			return res.redirect('/');

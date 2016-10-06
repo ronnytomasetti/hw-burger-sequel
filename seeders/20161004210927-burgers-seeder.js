@@ -4,38 +4,38 @@ module.exports = {
 
 	up: function(queryInterface, Sequelize) {
 		return queryInterface.bulkInsert('Burgers', [{
-			burger_name: "Cheeseburger",
+			name: "Cheeseburger",
 			devoured: "0",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			burger_name: "Double Cheeseburger",
+			name: "Double Cheeseburger",
 			devoured: "0",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			burger_name: "Triple Cheeseburger",
+			name: "Triple Cheeseburger",
 			devoured: "0",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			burger_name: "Quadruple Cheeseburger",
+			name: "Quadruple Cheeseburger",
 			devoured: "0",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			burger_name: "The Heart Clogger Burger",
+			name: "The Heart Clogger Burger",
 			devoured: "0",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			burger_name: "Krabby Patty",
+			name: "Krabby Patty",
 			devoured: "1",
 			customer_id: 1,
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			burger_name: "Whopper Jr.",
+			name: "Whopper Jr.",
 			devoured: "1",
 			customer_id: 2,
 			created_at: Sequelize.fn('NOW'),

@@ -4,23 +4,23 @@ module.exports = {
 
 	up: function(queryInterface, Sequelize) {
 		return queryInterface.bulkInsert('Customers', [{
-			customer_name: "Luke Skywalker",
+			name: "Luke Skywalker",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			customer_name: "Anakin Skywalker",
+			name: "Anakin Skywalker",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			customer_name: "C-3PO",
+			name: "C-3PO",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			customer_name: "Princess Leia",
+			name: "Princess Leia",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}, {
-			customer_name: "Master Yoda",
+			name: "Master Yoda",
 			created_at: Sequelize.fn('NOW'),
 			updated_at: Sequelize.fn('NOW')
 		}]);

@@ -4,14 +4,14 @@ module.exports = {
 
 	up: function(queryInterface, Sequelize) {
 		return queryInterface.createTable('Burgers', {
-			burger_id: {
+			id: {
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
 				unique: true,
 				type: Sequelize.INTEGER
 			},
-			burger_name: {
+			name: {
 				allowNull: false,
 				type: Sequelize.STRING
 			},
@@ -23,7 +23,7 @@ module.exports = {
 				type: Sequelize.INTEGER,
 				references: {
 					model: 'Customers',
-					key: 'customer_id'
+					key: 'id'
 				}
 			},
 			created_at: {
