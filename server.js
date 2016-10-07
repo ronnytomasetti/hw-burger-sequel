@@ -15,8 +15,8 @@ var app = express();
 // =================================================================
 var Customers = require('./models')['Customers'];
 var Burgers = require('./models')['Burgers'];
-Customers.sync({ force: true });
-Burgers.sync({ force: true });
+Customers.sync();
+Burgers.sync();
 // =================================================================
 
 // =================================================================
