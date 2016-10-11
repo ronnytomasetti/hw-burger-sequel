@@ -1,5 +1,7 @@
 'use strict';
 
+var Customers = require('../models')['Customers'];
+
 module.exports = {
 
 	up: function(queryInterface, Sequelize) {
@@ -23,10 +25,22 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE
 			}
+		}).then(function() {
+			Customers.bulkCreate([{
+				name: "Luke Skywalker"
+			}, {
+				name: "Master Yoda"
+			}, {
+				name: "Anakin Skywalker"
+			}, {
+				name: "Han Solo"
+			}, {
+				name: "Darth Maul"
+			}]);
 		});
 	},
 
-	down: function(queryInterface, Sequelize) {
+	down: function(queryInterface) {
 		return queryInterface.dropTable('Customers');
 	}
 

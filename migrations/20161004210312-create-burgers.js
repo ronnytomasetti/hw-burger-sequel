@@ -1,5 +1,7 @@
 'use strict';
 
+var Burgers = require('../models')['Burgers'];
+
 module.exports = {
 
 	up: function(queryInterface, Sequelize) {
@@ -34,11 +36,28 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE
 			}
+		}).then(function() {
+			Burgers.bulkCreate([{
+				name: "Cheesburger",
+				devoured: 0
+			}, {
+				name: "Double Cheesburger",
+				devoured: 0
+			}, {
+				name: "Triple Cheesburger",
+				devoured: 0
+			}, {
+				name: "Quadruple Cheesburger",
+				devoured: 0
+			}, {
+				name: "Quintuple Cheesburger",
+				devoured: 0
+			}]);
 		});
 	},
 
-	down: function(queryInterface, Sequelize) {
-		return queryInterface.dropTable('Burgers');
+	down: function(queryInterface) {
+		return queryInterface.dropTable('Customers');
 	}
 
 };
