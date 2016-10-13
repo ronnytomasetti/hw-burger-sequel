@@ -38,19 +38,19 @@ module.exports = {
 			}
 		}).then(function() {
 			Burgers.bulkCreate([{
-				name: "Cheesburger",
+				name: "Cheeseburger",
 				devoured: 0
 			}, {
-				name: "Double Cheesburger",
+				name: "Double Cheeseburger",
 				devoured: 0
 			}, {
-				name: "Triple Cheesburger",
+				name: "Triple Cheeseburger",
 				devoured: 0
 			}, {
-				name: "Quadruple Cheesburger",
+				name: "Quadruple Cheeseburger",
 				devoured: 0
 			}, {
-				name: "Quintuple Cheesburger",
+				name: "Quintuple Cheeseburger",
 				devoured: 0
 			}]);
 		});
